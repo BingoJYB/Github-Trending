@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
         if (amount === undefined || amount === '' || amount <= 0) {
             this.display = this.projects;
         } else {
-            this.display = this.projects.slice(0, amount);
+            this.display = this.display.slice(0, amount);
         }
         this.countTotal(this.display);
     }
