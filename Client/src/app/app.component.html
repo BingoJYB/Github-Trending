@@ -7,14 +7,12 @@
                     <input type="text" class="form-control" id="filterbyname"
                            (input)="filterProject($event.target.value)">
                 </div>
-                <div class="col-4 row">
-                    <div class="col-5">
-                        <label for="number" class="col-form-label">&nbsp;&nbsp;Amount:</label>
-                    </div>
-                    <div class="col-7">
-                        <input type="text" class="form-control" id="number"
-                               (input)="getSomeProjects($event.target.value)">
-                    </div>
+                <div class="col-2 text-right">
+                    <label for="number" class="col-form-label">Amount:&nbsp;</label>
+                </div>
+                <div class="col-2">
+                    <input type="text" class="form-control" id="number"
+                           (input)="getSomeProjects($event.target.value)">
                 </div>
             </div>
             <div class="table-wrapper-scroll-y">
