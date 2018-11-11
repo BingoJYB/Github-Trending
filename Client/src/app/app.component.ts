@@ -36,12 +36,17 @@ export class AppComponent implements OnInit {
     }
 
     getSomeProjects(amount) {
-        amount = parseInt(amount);
-
-        if (amount === undefined || amount === '' || amount <= 0) {
+        if (amount === undefined || amount === '') {
             this.display = this.projects;
         } else {
-            this.display = this.display.slice(0, amount);
+            amount = parseInt(amount);
+            
+            if (amount <= 0) {
+                this.display = this.projects;
+            }
+            else {
+                this.display = this.display.slice(0, amount);
+            }
         }
         this.countTotal(this.display);
     }
