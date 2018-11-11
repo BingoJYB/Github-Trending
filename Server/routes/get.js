@@ -16,7 +16,8 @@ router.get('/', (req, res, next) => {
             $('h3 a').each((i, element) => {
                 let project = {'name': '', 'watcher': '0', 'star': '0'};
                 let project_name = $(element).attr('href');
-                project['name'] = project_name;
+                let temp = project_name.split('/');
+                project['name'] = [temp[1], temp[2]].join('/');
 
                 let promise = new Promise((resolve, reject) => {
                     request(base_url + project_name, (error, response, html) => {
