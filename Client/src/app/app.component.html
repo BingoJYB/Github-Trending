@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-6 align-items-end">
+            <div class="form-group row no-gutters">
+                <i class="fa fa-search text-right col-1" aria-hidden="true" title="Search">&nbsp;&nbsp;</i>
+                <div class="col-4">
+                    <input type="text" class="form-control" id="filterbyname"
+                           (input)="filterProject($event.target.value)">
+                </div>
+                <div class="col-4 row">
+                    <div class="col-5">
+                        <label for="number" class="col-form-label">&nbsp;&nbsp;Amount:</label>
+                    </div>
+                    <div class="col-7">
+                        <input type="text" class="form-control" id="number"
+                               (input)="getSomeProjects($event.target.value)">
+                    </div>
+                </div>
+            </div>
+            <div class="table-wrapper-scroll-y">
+                <table class="table table-bordered table-striped text-center">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">WATCHER</th>
+                        <th scope="col">STAR</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let project of display let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{project.name}}</td>
+                        <td>{{project.watcher}}</td>
+                        <td>{{project.star}}</td>
+                    </tr>
+                    <tr *ngIf="projects?.length > 0">
+                        <th scope="row">{{projects?.length+1}}</th>
+                        <td class="font-weight-bold">TOTAL WATCHER AND STAR</td>
+                        <td class="font-weight-bold">{{allWatcher.toLocaleString()}}</td>
+                        <td class="font-weight-bold">{{allStar.toLocaleString()}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
