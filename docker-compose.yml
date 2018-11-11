@@ -1,0 +1,11 @@
+version: "2"
+services:
+  client:
+    image: bingojyb/github-trending-client
+    ports:
+      - "4200:4200"
+
+  server:
+    image: bingojyb/github-trending-server
+    ports:
+      - "3000:3000"
